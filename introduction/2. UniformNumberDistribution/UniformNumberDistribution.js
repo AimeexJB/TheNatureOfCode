@@ -1,4 +1,4 @@
-var randomCounts = [];
+var randomCounts = []; //declaring an empty array
 var total = 20;
 
 function setup() {
