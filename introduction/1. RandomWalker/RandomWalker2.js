@@ -1,3 +1,4 @@
+//9 outcomes
 var walker;
 
 function setup() {
