@@ -10,12 +10,14 @@ function setup() {
 function draw() {
 	background(51);
 
-	x = x + xspeed;
+	x = x + xspeed; //adding the speed to the position
 
+	//this statement stops the ball from going off the screen
 	if ((x > width) || (x < 0)) {
 		xspeed = xspeed * -1;
 	}
 
+	//displaying the circle
 	stroke(0);
 	strokeWeight(2);
 	fill(127);
