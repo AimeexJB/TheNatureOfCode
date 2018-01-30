@@ -1,6 +1,6 @@
 # TheNatureOfCode - Random Walker
 
-In these files we cover the 4 files wint the Random Walker class.
+In these files we cover 2 files with the Random Walker class.
 
 ## RandomWalker - with 4 outcomes
 
