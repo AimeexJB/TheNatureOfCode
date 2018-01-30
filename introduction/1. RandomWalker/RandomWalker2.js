@@ -1,4 +1,5 @@
 //9 outcomes
+
 var walker;
 
 function setup() {
@@ -15,10 +16,12 @@ function draw () {
 function Walker() {
     this.x = width/2;
     this.y = height/2;
+    
     this.render = function() {
         stroke(0);
         point(this.x, this.y);
     }
+    
     this.step = function() {
         var stepx = floor(random(-1,2));
         var stepy = floor(random(-1,2));
