@@ -27,7 +27,7 @@ this.step = function() {
 
 ## Random Walker 4
 
-With this walker it is  random setupwith a level of probability. 
+With this walker it is  random setup with a level of probability. 
 
 ```js
 
