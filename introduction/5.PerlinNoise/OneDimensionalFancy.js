@@ -19,7 +19,7 @@ function draw() {
 	rect(0, 0, width, height);
 	for (i=0; i<noOfWalkers; i++) {
 		walkers[i].step(); //setting up the step function
-		walkers[i].render(); //setting up the render function}
+		walkers[i].render(); //setting up the render function
 	}
 }
 
