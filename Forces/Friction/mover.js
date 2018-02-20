@@ -3,7 +3,7 @@ var Mover = function(m) {
     //this.location = createVector(30, 30); //saving the location as a vector object
     this.location = createVector(Math.floor(random(width)), Math.floor(random(height))); //giving the vector a random width and height on the screen
     this.velocity = createVector(2, 2); //creating the velocity for the vector
-    this .acceleration = createVector(0, 0); //creating the acceleration fot the vector
+    this.acceleration = createVector(0, 0); //creating the acceleration fot the vector
     this.mass = m; //adding the mass
 
     this.update = function() {
