@@ -12,7 +12,7 @@ var Liquid = function(x, y, w, h, c, r, g, b, o) {
 
 	this.contains = function(m) {
 		return m.location.y > this.location.y && m.location.y < this.location.y + this.height && 
-				 m.location.x > this.location.x && m.location.x < this.location.x +this.width
+			   m.location.x > this.location.x && m.location.x < this.location.x +this.width
 	}
 
 	this.calculateDrag = function(m) {
