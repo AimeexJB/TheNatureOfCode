@@ -30,11 +30,6 @@ function draw() {
         }
     }
 
-    // liquid[0].calculateDrag(mover);
-    // liquid[1].calculateDrag(mover);
-    // liquid[2].calculateDrag(mover);
-    // liquid[3].calculateDrag(mover);
-
     mover.update();
     mover.display();
     mover.checkEdges();
