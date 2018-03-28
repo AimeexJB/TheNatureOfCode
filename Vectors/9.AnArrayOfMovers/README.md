@@ -1,105 +1,88 @@
-# TheNatureOfCode - Vectors
+# TheNatureOfCode - An Array of Movers
 
-A Vector is a line, typically drawn as an arrow, from a point, with a particular length. It is also another way to store 2 variables, an x and y value.
+Similiar to the last example where we have the ellipse moving towards the mouse, in this example we have a bunch of ellipses moving towards the mouse.
 
-## Example 1
-
-In the first example we see the ball vector moving horizontally across the screen.
-We first declare the x and y variables for the location of the vactor along with a variable for the speed of the ball and thn setup the canvas
-
+We first declare the movers as an empty array and then in the setup function we use a for loop to create all of the movers along with creating the canvas.
 
 ```js
-
-var x = 320;
-var y = 180;
-
-var xspeed = 2;
+var movers = [];
 
 function setup() {
     createCanvas(640, 360);
+    for (var i = 0; i < 20; i++) {
+        movers[i] = new Mover();
+    }
 }
 
 ```
 
-From there, we set up the draw function. Here we declare the background colour and then add the speed to the x position.
+In the draw function we set the background colour and use another for loop to update and display all of the movers.
 
 ```js
+function draw() {
+    background(51);
 
-background(51);
-
-x = x + xspeed;
+    for (var i = 0; i < movers.length; i++) {
+        movers[i].update();
+        movers[i].display();
+    }
+}
 
 ```
 
-After that we write an if statement that stops the ball from going of the canvas.
+In the mover function we create a location vector which will randomly put all the movers on the screen and spread them out on the canvas.The velocity vector is then set to a fixed value of (3,3) and the acceleration vector is then left blank.
 
 ```js
+var Mover = function() {
 
-if ((x > width) || (x < 0)) {
-        xspeed = xspeed * -1;
+    this.location = createVector(floor(random(width)), floor(random(height)));
+    this.velocity = createVector(3, 3);
+    this.acceleration = createVector();
+}
+
+```
+
+In the update function we are creating a mouse vector that will get the coordinates of the mouse on the canvas. We set the acceleration vector to a P5 vector which is a static reference to sub() and set it to the mouse and location. Then multiply it by 0.2. 
+
+We then take the velocity and add the current acceleration, limit the velocity to 10 and take the location and add the current velocity to it.
+
+```js
+    this.update = function() {
+        var mouse = createVector(mouseX, mouseY);
+
+        this.acceleration = p5.Vector.sub(mouse, this.location);
+        this.acceleration.setMag(0.2);
+
+        this.velocity.add(this.acceleration);
+        this.velocity.limit(10);
+        this.location.add(this.velocity);
     }
 
 ```
 
-We then display the ball vector by adding a stroke, stroke weight, fill and ellipse shape.
-
-##Example 2
-
-In this example we see he ball vector moving around the screen at a speed. We add another variable for the y speed. We vary the speeds for the x and y directions so the ball does not move in a 45degree angle.
+In the display function we give the object a stroke and fill, then we make it an ellipse and draw it at the new location vector points.
 
 ```js
+    this.display = function() {
+        stroke(150);
+        strokeWeight(2);
+        fill(255, 0, 0);
 
-var xspeed = 2.5;
-var yspeed = 2;
+        ellipse(this.location.x, this.location.y, 40, 40);
+    }
 
 ```
 
-Like before, in the draw function, we then add the speeds to the x and y positions and add an if statement so the ball doesnt hit against the walls of the canvas.
+We then make a checkEdges function which makes the ball bounce off the walls and stops it from going off the canvas.
 
 ```js
-
-y = y + yspeed;
-
-if ((y > height) || (y < 0)) {
-    yspeed = yspeed * -1;
-}
-
-```
-
-
-##Example 3
-
-In this example we swap out the x and y variables for a position variable and the speed variable for a velocity variable.
-
-Then in the setup function we create our vector, by passing in 2 objects, for position and we set the vector speed.
-
-```js
-
-position = createVector(100, 100);
-velocity = createVector(2, 2);
+    this.checkEdges = function() {
+        if (this.location.x > width || this.location.x < 0) {
+            this.velocity.x = this.velocity.x * -1;
+        }
+        if (this.location.y > height || this.location.y < 0) {
+            this.velocity.y = this.velocity.y * -1;
+        }
+    }
 
 ```
-
-In the draw function we add the speeds to the x and y positions like before. Instead of writing the simple code x = x + xspeed; and y = y + yspeed; we write a more advanced version.
-
-```js
-
-position.x = position.x + velocity.x; 
-position.y = position.y + velocity.y;
-
-```
-
-Then when stopping the ball from going off the canvas we replace the speed variables and position variables as well.
-
-```js
-
-if ((position.x > width) || (position.x < 0)) {
-        velocity.x = velocity.x * -1;
-}
-if ((position.y > height) || (position.y < 0)) {
-    velocity.y = velocity.y * -1;
-}
-
-```
-
-

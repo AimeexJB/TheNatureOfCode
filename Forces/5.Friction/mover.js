@@ -34,7 +34,6 @@ var Mover = function(m) {
 
     this.applyForce = function(force) { //getting the wind vector
         var f = p5.Vector.div(force, this.mass); //using a static function.. dividing the force by the mass... makes the smaller objects fall faster
-
         this.acceleration.add(f); //adding the force to the acceleration and vector
 
     }

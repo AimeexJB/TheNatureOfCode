@@ -24,10 +24,13 @@ function setup() {
 From there, we set up the draw function. Here we declare the background colour and then add the speed to the x position.
 
 ```js
+function draw() {
 
-background(51);
+    background(51);
 
-x = x + xspeed;
+    x = x + xspeed;
+
+}
 
 ```
 

@@ -9,6 +9,7 @@ function draw() {
 	var center = createVector(width/2, height/2);
 	var vectorLine = mouse.sub(center);
 	vectorLine.mult(0.5); //halfs the line
+	//vectorLine.div(0.5);
 
 	//displaying the line
 	translate(width/2, height/2); //scaling the line to the middle of the screem

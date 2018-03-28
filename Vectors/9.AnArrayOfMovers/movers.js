@@ -18,7 +18,7 @@ function draw() {
 
 var Mover = function() {
 
-	this.location = createVector(width /2, height /2);
+	this.location = createVector(floor(random(width)), floor(random(height)));
 	this.velocity = createVector(3, 3);
 	this.acceleration = createVector();
 
