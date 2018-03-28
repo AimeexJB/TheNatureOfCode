@@ -9,5 +9,5 @@ These are all the Vector examples from the Naure of Code book
 5. [Vector Magnitude](5.VectorMagnitude/)
 6. [Normalising Vectors](6.NormalisingVectors/)
 7. [Velocity](7.Velocity/)
-8. [Acceleration](8.Acceleration/)
+8. [Accelaration](8.Accelaration/)
 9. [An Array of movers](9.AnArrayOfMovers/)
