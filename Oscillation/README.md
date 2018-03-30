@@ -11,4 +11,5 @@ These are all the Oscillation examples from the Naure of Code book
 7. [Oscillator Objects](7.OscillatorObjects/)
 8. [Static Wave](8.StaticWave/)
 9. [The Wave](9.TheWave/)
-10. [Class Example 1](ClassExcample1/)
+10. [Class Example 1](ClassExample1/)
+11. [Class Example 2](ClassExcample2/)
